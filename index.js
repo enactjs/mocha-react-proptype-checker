@@ -10,12 +10,13 @@ var restoreErrorAndWarnings = spy.restoreErrorAndWarnings;
 beforeEach(watchErrorAndWarnings);
 
 afterEach(function(done) {
-	var actual = filterErrorAndWarnings(/(Invalid prop|Failed prop type|Unknown prop)/);
+	var actual = filterErrorAndWarnings();
 	var expected = 0;
 	restoreErrorAndWarnings();
 	if (actual.length > expected) {
-		console.error('PropType Failure:', this.currentTest.parent.title, 'at "', this.currentTest.title, '"');
+		actual.forEach(() => console.error(actual));
+		console.error(`Errors/Warnings at:' ${this.currentTest.parent.title}, 'at ${this.currentTest.title}`);
 	}
-	done();
 	expect(actual).to.have.length(expected);
+	done();
 });
