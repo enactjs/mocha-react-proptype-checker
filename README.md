@@ -1,6 +1,6 @@
 # mocha-react-proptype-checker
 
-> A Mocha test tool to fail on any warnings/errors in a test
+> A Mocha test tool that will a test fail on any warnings/errors
 
 ### Installation
 
