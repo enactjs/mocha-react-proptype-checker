@@ -10,7 +10,7 @@ var restoreErrorAndWarnings = spy.restoreErrorAndWarnings;
 beforeEach(watchErrorAndWarnings);
 
 afterEach(function(done) {
-	var actual = filterErrorAndWarnings(/(Invalid prop|Failed prop type|Unknown prop|non-boolean attribute|Received NaN|Invalid value|React does not recognize)/);
+	var actual = filterErrorAndWarnings(/(Invalid prop|Failed prop type|Unknown prop|non-boolean attribute|Received NaN|Invalid value|Invalid values|React does not recognize|React uses onFocus and onBlur instead of onFocusIn and onFocusOut|Invalid event handler property|Unknown event handler property|Directly setting property `innerHTML` is not permitted|The `aria` attribute is reserved for future use in |for a string attribute `is`. If this is expected, cast|Invalid DOM property|React does not recognize the)/);
 	var expected = 0;
 	restoreErrorAndWarnings();
 	if (actual.length > expected) {
