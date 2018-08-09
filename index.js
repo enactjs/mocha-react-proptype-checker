@@ -13,9 +13,7 @@ afterEach(function(done) {
 	var actual = filterErrorAndWarnings(/(Invalid prop|Failed prop type|Unknown prop|non-boolean attribute|Received NaN|Invalid value|React does not recognize)/);
 	var expected = 0;
 	restoreErrorAndWarnings();
-	console.error(actual);
 	if (actual.length > expected) {
-		actual.forEach(() => console.error(actual));
 		console.error(`Errors/Warnings at:' ${this.currentTest.parent.title}, 'at ${this.currentTest.title}`);
 	}
 	expect(actual).to.have.length(expected);
